@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #f6f6f6; margin: 0; padding: 0; overflow-x: hidden; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; line-height: 1.7; color: #1a1a1a; font-weight: 400; }
+body { background: #f6f6f6; margin: 0; padding: 0; overflow-x: hidden; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; line-height: 1.7; color: #1a1a1a; font-weight: 420; }
 h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
 
 /* Language */
@@ -64,6 +64,7 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
 .card p { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; }
 .card a { color: #2563eb; font-size: 14px; font-weight: 500; text-decoration: none; display: inline-block; margin-top: 12px; }
 .card a:hover { text-decoration: underline; }
+.card a + a { margin-left: 16px; }
 .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .card-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
@@ -83,15 +84,9 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
 .btn-primary { display: inline-flex; align-items: center; gap: 0; padding: 12px 24px; background: #1a1a1a; color: #fff; border-radius: 8px; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; transition: transform 0.2s; }
 .btn-primary:hover { transform: scale(1.03); }
 
-
 /* === DARK STATS === */
-.section-dark { background: #1a1a1a; border-radius: 8px; padding: 100px 60px; max-width: 1100px; margin: 0 auto; text-align: center; }
-.section-dark h2 { color: #ffffff; font-size: 42px; font-weight: 500; max-width: 800px; margin: 0 auto 64px; line-height: 1.15; letter-spacing: -0.02em; }
-.section-dark .muted { color: rgba(255,255,255,0.35); }
+
 .section-dark .sub-label { color: rgba(255,255,255,0.6); justify-content: center; margin-bottom: 20px; }
-.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; max-width: 800px; margin: 0 auto; }
-.stat-num { font-family: 'DM Sans', sans-serif; font-size: 64px; font-weight: 500; color: #ffffff; letter-spacing: -0.03em; margin-bottom: 8px; }
-.stat-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.5; }
 
 /* === SCREENSHOT/GUIDE === */
 .screenshot-container { position: relative; max-width: 1000px; margin: 0 auto 24px; border-radius: 8px; overflow: visible; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
@@ -131,7 +126,6 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
 .cta-btn { display: inline-flex; align-items: center; gap: 0; padding: 12px 24px; background: #1a1a1a; color: #fff; border-radius: 8px; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; transition: transform 0.2s; }
 .cta-btn:hover { transform: scale(1.03); }
 
-
 /* === FOOTER === */
 .footer { text-align: center; padding: 60px 40px; max-width: 1100px; margin: 0 auto; }
 .footer p { font-family: 'Inter', sans-serif; color: #999; font-size: 14px; }
@@ -154,10 +148,10 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
 
   .card-grid, .card-grid-2 { grid-template-columns: 1fr; }
   .services-layout { grid-template-columns: 1fr; gap: 40px; }
-  .stats-row { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .stat-num { font-size: 48px; }
-  .section-dark { padding: 60px 24px; margin: 0 16px; }
-  .section-dark h2 { font-size: 28px; }
+  
+  
+  
+  
 
   .video-grid { grid-template-columns: 1fr; }
   .list-item { grid-template-columns: 1fr; gap: 8px; padding: 16px 0; }
@@ -172,7 +166,7 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
   .section { padding: 60px 16px; }
   .section-header h2 { font-size: 24px; }
   .card { padding: 28px; }
-  .section-dark { margin: 0 12px; }
+  
 }
 </style>
 </head>
@@ -248,14 +242,15 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
     </div>
     <div class="card">
       <h4 style="color:#2563eb;font-size:28px;font-weight:500;margin-bottom:16px;">03</h4>
-      <h4 class="en">Output</h4><h4 class="vi">Đầu Ra</h4><h4 class="cn">输出</h4>
+      <h4 class="en">AI Output</h4><h4 class="vi">Đầu Ra AI</h4><h4 class="cn">AI 输出</h4>
       <p class="en">Optimized prompts for image, video, and animation</p>
       <p class="vi">Prompt tối ưu cho hình ảnh, video và animation</p>
       <p class="cn">优化的图像、视频和动画提示词</p>
     </div>
   </div>
 
-  <!-- Capabilities - 2-Column Layout -->
+  <!-- Inline Stats -->
+    <!-- Capabilities - 2-Column Layout -->
   <div class="services-layout">
     <div class="services-left">
       <p class="sub-label"><span class="en">Capabilities</span><span class="vi">Khả Năng</span><span class="cn">功能特性</span></p>
@@ -307,18 +302,7 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
 
 <!-- DARK STATS -->
 <div style="padding: 40px 24px;">
-<section class="section-dark">
-  <p class="sub-label"><span class="en">Impact</span><span class="vi">Hiệu Quả</span><span class="cn">影响</span></p>
-  <h2 class="en">Optimized prompts <span class="muted">for image, video, and animation</span> that drive creative performance</h2>
-  <h2 class="vi">Prompt tối ưu <span class="muted">cho hình ảnh, video và animation</span> thúc đẩy hiệu suất sáng tạo</h2>
-  <h2 class="cn">优化的提示词 <span class="muted">适用于图像、视频和动画</span> 驱动创意表现</h2>
-  <div class="stats-row">
-    <div class="stat"><div class="stat-num">6</div><p class="stat-desc en">Core features</p><p class="stat-desc vi">Tính năng</p><p class="stat-desc cn">核心功能</p></div>
-    <div class="stat"><div class="stat-num">5</div><p class="stat-desc en">AI layers</p><p class="stat-desc vi">Lớp AI</p><p class="stat-desc cn">AI 层级</p></div>
-    <div class="stat"><div class="stat-num">3</div><p class="stat-desc en">Output formats</p><p class="stat-desc vi">Định dạng</p><p class="stat-desc cn">输出格式</p></div>
-    <div class="stat"><div class="stat-num">&lt;2m</div><p class="stat-desc en">Generation time</p><p class="stat-desc vi">Thời gian tạo</p><p class="stat-desc cn">生成时间</p></div>
-  </div>
-</section>
+
 </div>
 
 <!-- GUIDE -->
@@ -414,12 +398,28 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
 </section>
 
 <!-- AD FORMATS -->
-<section id="formats" class="section">
+
+<!-- TIPS -->
+
+<!-- ARCHITECTURE -->
+
+<!-- CTA -->
+<section id="practices" class="section">
   <div class="section-header">
-    <p class="sub-label"><span class="en">Ad Formats</span><span class="vi">Định Dạng Quảng Cáo</span><span class="cn">广告格式</span></p>
-    <h2 class="en">Use cases <span class="muted">by ad format</span></h2>
-    <h2 class="vi">Ứng dụng <span class="muted">theo định dạng</span></h2>
-    <h2 class="cn">按广告格式 <span class="muted">分类的应用</span></h2>
+    <p class="sub-label"><span class="en">Best Practices</span><span class="vi">Thực Hành Tốt</span><span class="cn">最佳实践</span></p>
+    <h2 class="en">Tips & use cases</h2>
+    <h2 class="vi">Mẹo & ứng dụng</h2>
+    <h2 class="cn">技巧与应用场景</h2>
+  </div>
+  <div class="card-grid-2">
+    <div class="card"><h4 class="en">Be Specific</h4><h4 class="vi">Mô Tả Cụ Thể</h4><h4 class="cn">描述要具体</h4><p class="en">Include materials, colors, dimensions, and key product attributes in your descriptions.</p><p class="vi">Bao gồm chất liệu, màu sắc, kích thước và thuộc tính sản phẩm chính.</p><p class="cn">包含材质、颜色、尺寸和关键产品属性。</p></div>
+    <div class="card"><h4 class="en">Use Real Search Terms</h4><h4 class="vi">Dùng Từ Khóa Thực</h4><h4 class="cn">使用真实搜索词</h4><p class="en">Pull actual customer search queries from your campaigns for intent-aligned prompts.</p><p class="vi">Lấy từ khóa tìm kiếm thực từ chiến dịch để prompt phù hợp ý định.</p><p class="cn">从广告活动中提取真实客户搜索词。</p></div>
+    <div class="card"><h4 class="en">Iterate via Chat</h4><h4 class="vi">Lặp Lại qua Chat</h4><h4 class="cn">通过对话迭代</h4><p class="en">Don't stop at the first output - use Chat with Clair to refine and explore variations.</p><p class="vi">Đừng dừng ở kết quả đầu - dùng Chat để tinh chỉnh và khám phá biến thể.</p><p class="cn">不要止步于第一个输出 - 使用对话功能优化。</p></div>
+    <div class="card"><h4 class="en">Match Format to Placement</h4><h4 class="vi">Phù Hợp Định Dạng</h4><h4 class="cn">格式匹配广告位</h4><p class="en">Use image prompts for static placements, video for SBV/SDV, animation for SPV.</p><p class="vi">Dùng prompt hình ảnh cho vị trí tĩnh, video cho SBV/SDV, animation cho SPV.</p><p class="cn">静态广告位用图像提示词，视频用SBV/SDV，动画用SPV。</p></div>
+  </div>
+
+  <div style="margin-top:64px;">
+    <p class="sub-label"><span class="en">By Ad Format</span><span class="vi">Theo Định Dạng</span><span class="cn">按广告格式</span></p>
   </div>
   <div class="list-items">
     <div class="list-item"><div><h4 class="en">Listing A+ Content</h4><h4 class="vi">Listing A+</h4><h4 class="cn">A+ 内容</h4></div><div><p class="en">Lifestyle and product visuals for enhanced brand content</p><p class="vi">Hình ảnh lifestyle và sản phẩm cho nội dung thương hiệu</p><p class="cn">生活方式和产品视觉素材</p></div><div><span class="tag">Image</span></div></div>
@@ -431,57 +431,6 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
   </div>
 </section>
 
-<!-- TIPS -->
-<section id="tips" class="section">
-  <div class="section-header">
-    <p class="sub-label"><span class="en">Best Practices</span><span class="vi">Thực Hành Tốt</span><span class="cn">最佳实践</span></p>
-    <h2 class="en">Tips for <span class="muted">best results</span></h2>
-    <h2 class="vi">Mẹo để <span class="muted">có kết quả tốt</span></h2>
-    <h2 class="cn">获得 <span class="muted">最佳效果</span> 的技巧</h2>
-  </div>
-  <div class="card-grid-2">
-    <div class="card"><h4 class="en">Be Specific</h4><h4 class="vi">Mô Tả Cụ Thể</h4><h4 class="cn">描述要具体</h4><p class="en">Include materials, colors, dimensions, and key product attributes in your descriptions.</p><p class="vi">Bao gồm chất liệu, màu sắc, kích thước và thuộc tính sản phẩm chính.</p><p class="cn">包含材质、颜色、尺寸和关键产品属性。</p></div>
-    <div class="card"><h4 class="en">Use Real Search Terms</h4><h4 class="vi">Dùng Từ Khóa Thực</h4><h4 class="cn">使用真实搜索词</h4><p class="en">Pull actual customer search queries from your campaigns for intent-aligned prompts.</p><p class="vi">Lấy từ khóa tìm kiếm thực từ chiến dịch để prompt phù hợp ý định.</p><p class="cn">从广告活动中提取真实客户搜索词。</p></div>
-    <div class="card"><h4 class="en">Iterate via Chat</h4><h4 class="vi">Lặp Lại qua Chat</h4><h4 class="cn">通过对话迭代</h4><p class="en">Don't stop at the first output - use Chat with Clair to refine and explore variations.</p><p class="vi">Đừng dừng ở kết quả đầu - dùng Chat để tinh chỉnh và khám phá biến thể.</p><p class="cn">不要止步于第一个输出 - 使用对话功能优化。</p></div>
-    <div class="card"><h4 class="en">Match Format to Placement</h4><h4 class="vi">Phù Hợp Định Dạng</h4><h4 class="cn">格式匹配广告位</h4><p class="en">Use image prompts for static placements, video for SBV/SDV, animation for SPV.</p><p class="vi">Dùng prompt hình ảnh cho vị trí tĩnh, video cho SBV/SDV, animation cho SPV.</p><p class="cn">静态广告位用图像提示词，视频用SBV/SDV，动画用SPV。</p></div>
-  </div>
-</section>
-
-<!-- ARCHITECTURE -->
-<section class="section">
-  <div class="section-header">
-    <p class="sub-label"><span class="en">Architecture</span><span class="vi">Kiến Trúc</span><span class="cn">架构</span></p>
-    <h2 class="en">Architecture <span class="muted">overview</span></h2>
-    <h2 class="vi">Tổng quan <span class="muted">kiến trúc</span></h2>
-    <h2 class="cn">架构 <span class="muted">概览</span></h2>
-    <p class="en">Built on PartyRock - chaining multiple AI interpretation steps into a pipeline.</p>
-    <p class="vi">Xây dựng trên PartyRock - chuỗi nhiều bước diễn giải AI.</p>
-    <p class="cn">基于 PartyRock 构建 - 多步AI解读流水线。</p>
-  </div>
-  <div class="list-items en">
-    <div class="list-item"><div><h4>Input Layer</h4></div><div><p>Captures product context and customer intent</p></div><div><span class="tag">Text Widgets</span></div></div>
-    <div class="list-item"><div><h4>Interpretation Layer</h4></div><div><p>Analyzes input, extracts visual attributes, determines creative angles</p></div><div><span class="tag">LLM</span></div></div>
-    <div class="list-item"><div><h4>Enhancement Layer</h4></div><div><p>Transforms concepts into technically precise prompts</p></div><div><span class="tag">AI Chain</span></div></div>
-    <div class="list-item"><div><h4>Output Layer</h4></div><div><p>Delivers format-specific prompts (image/video/animation)</p></div><div><span class="tag">Output Widgets</span></div></div>
-    <div class="list-item"><div><h4>Refinement Layer</h4></div><div><p>Interactive iteration and prompt customization</p></div><div><span class="tag">Chat Widgets</span></div></div>
-  </div>
-  <div class="list-items vi">
-    <div class="list-item"><div><h4>Lớp Đầu Vào</h4></div><div><p>Thu thập ngữ cảnh sản phẩm và ý định khách hàng</p></div><div><span class="tag">Text Widgets</span></div></div>
-    <div class="list-item"><div><h4>Lớp Diễn Giải</h4></div><div><p>Phân tích đầu vào, trích xuất thuộc tính, xác định góc sáng tạo</p></div><div><span class="tag">LLM</span></div></div>
-    <div class="list-item"><div><h4>Lớp Nâng Cao</h4></div><div><p>Chuyển đổi khái niệm thành prompt chính xác kỹ thuật</p></div><div><span class="tag">AI Chain</span></div></div>
-    <div class="list-item"><div><h4>Lớp Đầu Ra</h4></div><div><p>Cung cấp prompt theo định dạng</p></div><div><span class="tag">Output Widgets</span></div></div>
-    <div class="list-item"><div><h4>Lớp Tinh Chỉnh</h4></div><div><p>Lặp lại tương tác và tùy chỉnh prompt</p></div><div><span class="tag">Chat Widgets</span></div></div>
-  </div>
-  <div class="list-items cn">
-    <div class="list-item"><div><h4>输入层</h4></div><div><p>采集产品上下文和客户意图</p></div><div><span class="tag">文本组件</span></div></div>
-    <div class="list-item"><div><h4>解读层</h4></div><div><p>分析输入，提取视觉属性，确定创意角度</p></div><div><span class="tag">LLM</span></div></div>
-    <div class="list-item"><div><h4>增强层</h4></div><div><p>将基础概念转化为技术精确的提示词</p></div><div><span class="tag">AI Chain</span></div></div>
-    <div class="list-item"><div><h4>输出层</h4></div><div><p>交付特定格式的提示词</p></div><div><span class="tag">输出组件</span></div></div>
-    <div class="list-item"><div><h4>优化层</h4></div><div><p>交互式迭代和提示词定制</p></div><div><span class="tag">对话组件</span></div></div>
-  </div>
-</section>
-
-<!-- CTA -->
 <section class="cta-section">
   <div class="cta-card">
     <h2 class="en">Ready to create better prompts?</h2>
