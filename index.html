@@ -35,9 +35,9 @@ h1, h2, h3, h4, .brand { font-family: 'DM Sans', sans-serif; }
 /* === HERO (dark) === */
 .hero { position: relative; padding: 160px 60px 120px; text-align: center; overflow: hidden; width: 100%; min-height: 100svh; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #0a0a0a; left: 0; right: 0; }
 .hero-video-bg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; transform: scale(1.1); }
-.hero-video-cover { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,0.05); pointer-events: none; }
-.hero-video-bg iframe { position: absolute; top: 50%; left: 50%; width: max(100%, 177.78vh); height: max(100%, 56.25vw); transform: translate(-50%, -50%); border: none; filter: blur(1.5px) brightness(0.85); }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.6) 100%); z-index: 3; }
+.hero-video-cover { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,0.12); pointer-events: none; }
+.hero-video-bg iframe { position: absolute; top: 50%; left: 50%; width: max(100%, 177.78vh); height: max(100%, 56.25vw); transform: translate(-50%, -50%); border: none; filter: blur(3px) brightness(0.85); z-index: 1; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.75) 100%); z-index: 3; }
 .hero-inner { position: relative; z-index: 4; max-width: 800px; margin: 0 auto; color: #ffffff; }
 .hero-avail { display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
 .hero-avail .pulse { width: 8px; height: 8px; background: #34d399; border-radius: 50%; animation: pulse 2s ease infinite; }
@@ -212,7 +212,10 @@ body::before { content: ''; position: fixed; top: -50%; left: -50%; width: 200%;
 <!-- HERO -->
 <header class="hero">
   <div class="hero-video-bg">
-    <iframe src="https://www.youtube-nocookie.com/embed/0l8HR6H_t1o?si=lAHuYKamEsRjMUvz&controls=0&autoplay=1&mute=1&loop=1&playlist=0l8HR6H_t1o&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&start=11" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" tabindex="-1"></iframe>
+    <!-- Fallback image (shows immediately, stays if YouTube is blocked) -->
+    <img id="hero-fallback" src="https://clair-visual.github.io/userguide/hero_bg.jpg" alt="" style="position:absolute; top:50%; left:50%; width:max(100%, 177.78vh); height:max(100%, 56.25vw); transform:translate(-50%,-50%); object-fit:cover; filter:blur(3px) brightness(0.85); z-index:0;">
+    <!-- YouTube iframe (loads on top if accessible) -->
+    <iframe id="hero-video" src="https://www.youtube-nocookie.com/embed/0l8HR6H_t1o?si=lAHuYKamEsRjMUvz&controls=0&autoplay=1&mute=1&loop=1&playlist=0l8HR6H_t1o&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&start=11&cc=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" tabindex="-1" style="opacity:0; transition:opacity 1s;" onload="this.style.opacity='1'"></iframe>
     <div class="hero-video-cover"></div>
   </div>
   <div class="hero-overlay"></div>
